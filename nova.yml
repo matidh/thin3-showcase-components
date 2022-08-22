@@ -1,0 +1,50 @@
+# Service definition
+service:
+  uuaa: NOVA
+  # Comercial name
+  publicName: demo
+  # Short name, cannot contain fancy chars
+  name: demo
+  # Service description
+  description: >
+    Ejempolo de servicio para thin3
+  # Service version
+  version: "1.0.0"
+  # Service type: do not touch
+  type: CDN
+  # Language: do not touch
+  language: Angular - Thin3
+  # language version: do not touch
+  languageVersion: "latest"
+  # NOVA Release: do not touch
+  novaVersion: "21.11"
+  # NOVA CLI Release: do not touch
+  novaCliVersion: "7.0.0"
+
+# swagger api definitions
+apis:
+  # NOTE served is forbidden for this service type
+  # Thin2 never serve anything, just consume
+  consumed:
+    # - src/api/api.yml
+
+# AsyncAPIs definitions
+# contains all AsyncAPIs used by the service
+#asyncapis:
+# NOTE backToBack is forbidden for this service type
+# backToFront:
+#   AsyncAPI definition file
+#   - src/asyncapi/asyncapi.yaml
+
+# Optional
+# Service properties definition (config-server)
+properties:
+  - name: "release.header"
+    description: "Cabecera obligatoria. Nombre de release para establecer en las cabeceras de las API"
+    type: "STRING"
+    default: "Release"
+    management: "SERVICE"
+    encrypt: false
+
+# NOTE dependencies is forbidden for this service type
+# NOTE build is forbidden for this service type
